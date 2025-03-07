@@ -19,4 +19,4 @@ function detalhesProduto(props: detalhesProdutoProps) {
         </>
     )
 }
-export default detalhesProduto;
+export default detalhesProduto; //jenny
