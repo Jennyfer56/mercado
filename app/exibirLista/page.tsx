@@ -1,30 +1,35 @@
 import { listaData } from "@/data/ListaData";
-
+import Link from "next/link";
 function exibirLista() {
     return (
         <>
-            <h1>LISTA DE PRODUTO EM TABELA</h1>
-            <table>
-                <thead>
+            <h1>Lista de Produtos em Tabela</h1>
+            <table className="min-w-full">
+                <thead className="bg-gray-50">
                     <tr>
-                        <th>ID</th>
+                        <th >ID</th>
                         <th>Produto</th>
                         <th>Detalhes</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {listaData.map(function (item) {
+                    {listaData.map(function (itens) {
                         return (
-                            <tr key={item.id}>
-                                <td>{item.id}</td>
-                                <td>{item.nome}</td>
+                            <tr key={itens.id}>
+                                <td>{itens.id}</td>
+                                <td>{itens.nome}</td>
                                 <td>
-                                    <link href={'/detalhesProduto/' + item.id}>VER DETALHES
-                                    </link>
+                                    <Link href={'/detalhesProdutos/' + itens.id}>Ver Detalhes</Link>
                                 </td>
                             </tr>
                         )
-                    })} </tbody>
+                    })}
+                    <tr>
+                        <td>1</td>
+                        <td>Arroz</td>
+                        <td>Link</td>
+                    </tr>
+                </tbody>
             </table>
         </>
     )
